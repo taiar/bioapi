@@ -16,6 +16,15 @@ class BaseService
     !!@@read
   end
 
+  def search_smart(smart_string)
+    smarts = Rubabel::Smarts.new(smart_string)
+    found = []
+    molecules.each do |m|
+      found << m if m.matches(smarts).count > 0
+    end
+    found
+  end
+
   private
 
   def base_file_path
