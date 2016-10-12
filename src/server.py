@@ -1,4 +1,5 @@
 import pybel
+import Image
 from flask import Flask
 from flask import render_template
 
@@ -14,10 +15,13 @@ def teste():
     phenol = pybel.Smarts("[OH]c1ccccc1") # phenol
     ethyl = pybel.Smarts("[#6][#6]") # ethyl group
     # mol = pybel.readfile("mol2", "resources/base.mol2")
-    atomtotal = 0
+    found_total = 0
+    found = []
     for mol in pybel.readfile("mol2", "resources/base.mol2"):
-        atomtotal += len(mol.atoms)
-    return str(atomtotal)
+        finded = phenol.findall(mol)
+        found_total += len(finded)
+        found.append(finded)
+        return mol.draw(True)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
