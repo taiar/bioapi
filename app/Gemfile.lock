@@ -162,6 +162,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  mini_magick
   openbabel
   rails (= 4.2.7.1)
   rubabel!
