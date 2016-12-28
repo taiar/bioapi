@@ -1,0 +1,78 @@
+\documentclass{abnt}
+\usepackage[utf8]{inputenc}
+\usepackage[num]{abntcite}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage[brazil]{babel}
+\addto\captionsbrazil{%
+\def\bibname{References}%
+\def\abstract{Abstract}%
+}
+
+\lstset{
+basicstyle=\small\sffamily,
+numbers=left,
+numberstyle=\tiny,
+frame=tb,
+columns=fullflexible,
+showstringspaces=false
+}
+
+\graphicspath{{imagens/}}
+
+\begin{document}
+\autor{André Taiar Marinho Oliveira}
+
+\titulo{A comparative study of concurrency models in Elixir and Rust}
+
+\orientador[Orientador:\\]{Prof. Dr. Fernando Magno Quintão Pereira}
+
+\comentario{Apresentado como requisito da disciplina de Monografia em Sistemas de Informação do DCC/UFMG}
+
+\instituicao{Universidade Federal de Minas Gerais \par Instituto de Ciências
+Exatas \par Departamento de Ciência da Computação}
+
+\local{Belo Horizonte} \data{2016/2}
+
+\capa
+\folhaderosto
+
+\begin{resumo}
+There are hundred of programming languages out there. Which one should we use?
+Which help do we have to choose well? How do they compare to each other? This
+document is an attempt to provide some answers to these questions. Naturally, it
+would not be possible to provide complete answers: as I mentioned, there are too
+many programming languages. Nevertheless, we chose four languages with a
+potential to grow in importance in the coming years. These programming languages
+are Ceylon, Dart, Elixir and Rust. During this project, we shall be
+talking about each one of them. These discussions will be in breath, not in
+depth. Their goal is to provide the reader with the minimum of information
+necessary to compare them, and who knows, to lure one or other interested person
+in learning them in a greater level of details. In any case, we hope to
+contribute a bit to the popularization of these programming languages, which -
+likely - will be paramount to the development of computer science in the next
+ten years.\\
+
+\textbf{Keywords}: programming languages, concurrency, elixir, rust.
+\end{resumo}
+
+\sumario
+\listoffigures
+
+\chapter{Elixir}
+\section{Elixir language introduction}
+\input{elixir_intro}
+\section{Elixir language usage}
+\input{elixir_usage}
+
+\chapter{Rust}
+\section{Rust language introduction}
+\input{rust_intro}
+\section{Rust language usage}
+\input{rust_usage}
+
+\bibliography{monografia-andre_taiar}
+
+\end{document}
