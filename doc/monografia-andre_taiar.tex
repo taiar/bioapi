@@ -61,17 +61,25 @@ ten years.\\
 \sumario
 \listoffigures
 
-\chapter{Elixir}
-\section{Elixir language introduction}
-\input{elixir_intro}
-\section{Elixir language usage}
-\input{elixir_usage}
+\chapter{Introdução}
+\section{Visão geral do assunto}
+\section{Objetivo, justificativa e motivação}
 
-\chapter{Rust}
-\section{Rust language introduction}
-\input{rust_intro}
-\section{Rust language usage}
-\input{rust_usage}
+\chapter{Contextualização e trabalhos relacionados}
+
+A Quimioinformática é uma área interdisciplinar que envolve a Química e a Informática e consiste no uso de técnicas computacionais aplicadas a uma gama de problemas no campo da Química. Dentre suas utilizações mais básicas estão o armazenamento, indexação, busca de informações relativas a compostos químicos, representação de átomos, moléculas e reações químicas entre moléculas, bases e bibliotecas de compostos químicos e recuperação de informação nestas bases. A Quimioinformática é sistematicamente utilizada para análise /in silico/ (análises feitas através de simulação computacional) nas indústrias farmacêuticas, na Bioinformática e em qualquer laboratório de Química atualmente.
+
+A Química Combinatória é uma grande ferramenta para a descoberta e o desenvolvimento de novos compostos químicos de interesse em diversas áreas. Nesta metodologia de síntese os produtos são formados simultaneamente através da combinação de diversos compostos e os experimentos são analisados depois de gerados. A principal meta desta metodologia é reduzir o tempo necessário para, por exemplo, a obtenção de um novo fármaco. É fácil perceber que na abordagem combinatorial gasta-se tempo na composição de uma quimioteca (uma biblioteca de experimentos já verificados de forma combinatória) bem como gastam-se compostos químicos que nem sempre serão utilizados em sua totalidade ou mesmo irão gerar um resultado de interesse para a análise final.
+
+Com a popularização e uma maior utilização da computação e da Quimioinformática, é possível reduzir o tempo gasto e a utilização de compostos em experimentos combinatoriais. Utilizando bases pré-definidas de reagentes, preparadas e filtradas arbitrariamente e combinando tais reagentes através de uma reação química conhecida, podemos observar as características dos compostos resultantes e obter uma boa aproximação do que aconteceria com os experimentos na realidade.
+
+Neste trabalho, foi desenvolvido um sistema computacional com interface web que permite a busca por reagentes de interesse em bases de compostos químicos através de diversos filtros de propriedades de moléculas. A partir desta busca, o usuário terá uma visualização dos resultados obtidos e a possibilidade de reagir quimicamente os compostos encontrados na busca, obtendo ao final os dados de todos os compostos possíveis gerados a partir desta combinação. Estes resultados são automaticamente exportados em um formato de planilha eletrônica permitindo salvar a informação e fazer futuras análises com os experimentos gerados.
+
+Em nosso protótipo utilizamos uma base de reagentes da Sigma-Aldrich que é uma grande empresa norte americana do ramo da química, biotecnologia e ciências da vida. Essa empresa é um conceituado fornecedor de compostos químicos para laboratórios de todo o mundo. Seu catálogo é fornecido em diversos formatos pelo ZINC que é uma base de dados (não comerciais) de compostos químicos comercialmente disponíveis, além de uma infinidade de outras funcionalidades ligadas à Bioinformática e farmacêutica.
+
+Dentre as ferramentas que compõem o backend do nosso sistema, a mais importante é o Open Babel. Segundo palavras do próprio site o Open Babel é uma conjunto de ferramentas projetado para lidar com as muitas linguagens dos dados químicos. No sistema ele é responsável por ler as bases e buscar os componentes, converter formatos de dados, extrair informações das moléculas e até mesmo gerar a visualização em imagem das moléculas na web.
+
+Todas as moléculas no sistema são representadas por meio de uma notação chamada SMILES (/Simplified Molecular Input Line Entry System/). Esta notação foi criada por uma empresa chamada Daylight, que também é uma referência na produção de sistemas químicos. Para procurar por padrões nas moléculas, utilizamos uma linguagem, também criada pela Daylight, chamada SMARTS. A mesma empresa também fornece uma linguagem para descrição de reações e transformações químicas chamada SMIRKS. Apesar disso, para as reações em nosso sistema não utilizamos os SMIRKS mas sim, uma outra linguagem chamada Reaction SMARTS. Essa linguagem basicamente usa SMARTS para descrever uma transformação química. Para executar a reação química utilizamos uma outra ferramenta chamada RDKit.
 
 \bibliography{monografia-andre_taiar}
 

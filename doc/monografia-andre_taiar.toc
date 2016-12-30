@@ -1,0 +1,7 @@
+\select@language {brazil}
+\contentsline {chapter}{Lista de Figuras}{}
+\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{5}
+\contentsline {section}{\numberline {1.1}Vis\IeC {\~a}o geral do assunto}{5}
+\contentsline {section}{\numberline {1.2}Objetivo, justificativa e motiva\IeC {\c c}\IeC {\~a}o}{5}
+\contentsline {chapter}{\numberline {2}Contextualiza\IeC {\c c}\IeC {\~a}o e trabalhos relacionados}{6}
+\contentsline {chapter}{References}{8}
