@@ -37,7 +37,7 @@ Exatas \par Departamento de Ciência da Computação}
 \folhaderosto
 
 \begin{resumo}
-Com o crescimento e disseminação da quimioinformática, experimentos /in silico/
+Com o crescimento e disseminação da quimioinformática, experimentos \textit{in silico}
 (análises feitas através de simulação computacional) surgem como opções que economizam
 diversos recursos e tempo de pesquisadores em processos laboratoriais na obtenção
 de compostos. Algumas ferramentas entretanto são comerciais e muito caras para que
@@ -58,21 +58,37 @@ uso geral.\\
 
 \section{Visão geral do assunto}
 
+A Quimioinformática é uma área interdisciplinar que trabalha a modelagem e resolução
+de problemas químicos utilizando infraestrutura computacional. Neste trabalho iremos
+utilizar diversas ferramentas e técnicas da quimioinformática para resolver um problema
+de química combinatória. Combinamos através de experimentos \textit{in silico} bases de
+reagentes químicos através de simulações de reações químicas gerando bibliotecas
+de compostos químicos para serem analisadas posteriormente.
+
 \section{Objetivo, justificativa e motivação}
+
+Existem ferramentas comerciais que realizam, em partes, o trabalho que estamos propondo.
+Tais ferramentas, porém, tem um alto custo e licenças que os tornam inacessíveis
+para grande parte dos laboratórios e usuários que trabalham na área. Iremos desenvolver
+a solução em formato de sistema web e disponibilizá-la gratuitamente na internet
+para uso e colaboração no crescimento deste sistema. Pelo potencial desta aplicação
+em ajudar outros laboratórios e cientistas, já existem ações em andamento para que
+ele continue sendo mantido e expandido. De qualquer forma, o protótipo inicial foi
+completamente projetado e desenvolvido neste trabalho.
 
 \chapter{Contextualização e trabalhos relacionados}
 
-A Quimioinformática é uma área interdisciplinar que envolve a Química e a Informática
+A Quimioinformática\cite{brown1998chemoinformatics} é uma área interdisciplinar que envolve a Química e a Informática
 e consiste no uso de técnicas computacionais aplicadas a uma gama de problemas no
 campo da Química. Dentre suas utilizações mais básicas estão o armazenamento, indexação,
 busca de informações relativas a compostos químicos, representação de átomos, moléculas
 e reações químicas entre moléculas, bases e bibliotecas de compostos químicos e
 recuperação de informação nestas bases. A Quimioinformática é sistematicamente utilizada
-para análise /in silico/ (análises feitas através de simulação computacional) nas
+para análise \textit{in silico} (análises feitas através de simulação computacional) nas
 indústrias farmacêuticas, na Bioinformática e em qualquer laboratório de Química
 atualmente.
 
-A Química Combinatória é uma grande ferramenta para a descoberta e o desenvolvimento
+A Química Combinatória\cite{RBCF43904} é uma grande ferramenta para a descoberta e o desenvolvimento
 de novos compostos químicos de interesse em diversas áreas. Nesta metodologia de
 síntese os produtos são formados simultaneamente através da combinação de diversos
 compostos e os experimentos são analisados depois de gerados. A principal meta desta
@@ -99,19 +115,19 @@ nas bases filtradas. Estes resultados são automaticamente exportados em um form
 de planilha eletrônica, contendo a biblioteca gerada e permitindo salvar a informação
 e fazer futuras análises com os experimentos gerados.
 
-Em nosso protótipo utilizamos uma base de reagentes da Sigma-Aldrich que é uma grande
+Em nosso protótipo utilizamos uma base de reagentes da Sigma-Aldrich\cite{SIGMA} que é uma grande
 empresa norte americana do ramo da química, biotecnologia e ciências da vida. Essa
 empresa é um conceituado fornecedor de compostos químicos para laboratórios de todo
-o mundo. Seu catálogo é fornecido em diversos formatos pelo ZINC que é uma base de
+o mundo. Seu catálogo é fornecido em diversos formatos pelo ZINC\cite{ZINC} que é uma base de
 dados (não comerciais) de compostos químicos comercialmente disponíveis, além de
 uma infinidade de outras funcionalidades ligadas à Bioinformática e farmacêutica.
 O ZINC é uma ferramenta gratuita desenvolvida e fornecida por laboratórios do Departamento
 de Química Farmacêutica da Universidade da Califórnia, em São Francisco (UCSF),
-EUA.
+EUA \cite{UCSFCHEM}.
 
 Foram utilizadas muitas ferramentas, todas disponíveis gratuitamente, na composição
 do sistema desenvolvido. Dentre as que compõem o back-end do projeto, a mais importante
-é o Open Babel. Segundo palavras do próprio site o Open Babel é um conjunto de ferramentas
+é o Open Babel\cite{OPEN_BABEL}. Segundo palavras do próprio site o Open Babel é um conjunto de ferramentas
 projetado para lidar com as muitas linguagens dos dados químicos. No sistema ele
 é responsável por ler as bases de reagentes (disponibilizados em um formato bem
 específico para moléculas) e buscar os componentes, converter formatos de dados
@@ -119,35 +135,34 @@ químicos, extrair informações das moléculas e até mesmo gerar a visualizaç
 imagem das moléculas para a web.
 
 Todas as moléculas no sistema são representadas por meio de uma notação chamada
-SMILES (/Simplified Molecular Input Line Entry System/). Esta notação foi criada
+SMILES (\textit{Simplified Molecular Input Line Entry System})\cite{DL_SMILES}. Esta notação foi criada
 por uma empresa chamada Daylight, que também é uma referência na produção de sistemas
 químicos. Para procurar por determinados padrões e características nas moléculas,
-utilizamos uma linguagem, também criada pela Daylight, chamada SMARTS. A mesma empresa
+utilizamos uma linguagem, também criada pela Daylight, chamada SMARTS\cite{DL_SMARTS}. A mesma empresa
 também fornece uma linguagem para descrição de reações e transformações químicas
-chamada SMIRKS. Apesar disso, para as reações em nosso sistema não utilizamos os
+chamada SMIRKS\cite{DL_SMIRKS}. Apesar disso, para as reações em nosso sistema não utilizamos os
 SMIRKS mas sim, uma outra linguagem chamada Reaction SMARTS. Essa linguagem basicamente
 usa SMARTS para descrever uma transformação química. Para executar a reação química
-utilizamos uma outra ferramenta livre chamada RDKit.
+utilizamos uma outra ferramenta livre chamada RDKit\cite{RDKIT}.
 
 \chapter{Método do trabalho}
 
 Este trabalho foi definitivamente o meu primeiro contato com a Bioinformática durante
-toda a minha graduação e o primeiro passo necessário foi tentar entender bem o problema
+toda a graduação e o primeiro passo necessário foi tentar entender bem o problema
 que a minha orientadora e idealizadora do projeto, Rafaela Ferreira, me passou em
-diversas reuniões que fizemos no início do meu trabalho. Juntamente com a minha
+diversas reuniões que fizemos em seu início. Juntamente com a minha
 outra orientadora, Raquel Minardi, aos poucos as funcionalidades necessárias foram
-ficando claras para mim e finalmente conseguimos definir um escopo de funcionalidades
-para este projeto.
+ficando claras finalmente conseguimos definir um escopo.
 
 Desde as reuniões mais iniciais sobre o tema deste trabalho, mesmo antes de entender
 corretamente o escopo do projeto, já era determinado que o mesmo deveria ser disponibilizado
 em forma de um sistema web por diversos motivos: facilidade para a manutenção em
-um lugar centralizado, facilidade para atualização, manutenção, distribuição e internacionalização
+um lugar centralizado, facilidade para atualização, distribuição e internacionalização
 do sistema.
 
 Por uma preferência pessoal de forma de trabalho, foi utilizada uma metodologia
-de trabalho muito parecida com metodologias ágeis de desenvolvimento de software,
-mais especificamente o Scrum. Houve a primeira parte do trabalho aonde os requisitos
+de trabalho muito parecida com metodologias ágeis de desenvolvimento de software\cite{alliance2001agile},
+mais especificamente o Scrum\cite{schwaber2011scrum}. Houve a primeira parte do trabalho aonde os requisitos
 do projeto foram ficando claros ao longo de diversas reuniões, em um formato de
 pré-jogo do Scrum. Nessas reuniões basicamente foram tomadas notas e muito conteúdo
 era levado para ser pesquisado e analisado. Houve durante esta etapa do projeto
@@ -253,7 +268,7 @@ com estas bases de dados. Por ser uma ferramenta especializada nesse tipo de ope
 busca etc) acabou se tornando o principal componente do back-end em nossa aplicação.
 
 O segundo problema a ser resolvido era a execução das reações. Existem atualmente
-boas ferramentas comerciais que realizam reações /in silico/ de moléculas mas são
+boas ferramentas comerciais que realizam reações \textit{in silico} de moléculas mas são
 poucas as opções gratuitas que fazem um trabalho satisfatório. A única opção encontrada
 e adotada no trabalho até o momento é através do RDKit. Como seu próprio slogan diz,
 ele é um programa open source de quimioinformática. O RDKit é uma suíte grande e
