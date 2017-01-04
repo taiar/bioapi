@@ -37,7 +37,16 @@ Exatas \par Departamento de Ciência da Computação}
 \folhaderosto
 
 \begin{resumo}
-There ...\\
+Com o crescimento e disseminação da quimioinformática, experimentos /in silico/
+(análises feitas através de simulação computacional) surgem como opções que economizam
+diversos recursos e tempo de pesquisadores em processos laboratoriais na obtenção
+de compostos. Algumas ferramentas entretanto são comerciais e muito caras para que
+grande parte dos laboratórios tenham acesso a suas funcionalidades. Neste trabalho
+foi desenvolvido uma ferramenta que permite a filtragem de reagentes químicos disponíveis
+em bases de moléculas comercialmente disponíveis e a combinação entre tais moléculas
+através de reações químicas, gerando uma biblioteca virtual de compostos químicos.
+Tal sistema foi desenvolvido em ambiente web e está disponível gratuitamente para
+uso geral.\\
 
 \textbf{Keywords}: quimioinformática, sistemas web, bibliotecas, compostos, reações.
 \end{resumo}
@@ -268,10 +277,14 @@ diretamente à aplicação que utiliza o RDKit.
 
 \section{Descrição da arquitetura do projeto}
 
-Este é um diagrama da arquitetura do projeto com os principais componentes do nosso sistema:
+Este é um diagrama da arquitetura do projeto com os principais componentes do sitema
+pode ser visto na figura \ref{fig:arq}.
 
-\begin{figure}[h]
-\includegraphics[scale=.8]{diagrama_de_arquitetura.png}
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[scale=0.8]{diagrama_de_arquitetura.png}
+  \caption{Diagrama de arquitetura do sistema}
+  \label{fig:arq}
 \end{figure}
 
 \chapter{Resultados e discussão}
