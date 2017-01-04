@@ -277,8 +277,24 @@ diretamente à aplicação que utiliza o RDKit.
 
 \section{Descrição da arquitetura do projeto}
 
-Este é um diagrama da arquitetura do projeto com os principais componentes do sitema
-pode ser visto na figura \ref{fig:arq}.
+Um diagrama da arquitetura do projeto com os principais componentes do sistema pode
+ser visto na figura \ref{fig:arq}.
+
+O framework web Ruby on Rails é o componente do sistema responsável por distribuir
+as tarefas aos outros componentes do back-end baseado na interação do usuário. Ele
+recebe requisições da internet, as interpreta, aciona os componentes do back-end
+e retorna uma resposta ao usuário. Existe uma camada entre o Rails e o Open Babel
+chamado Rubabel. Rubabel é uma biblioteca que abstrai alguns conceitos do Open Babel
+e os torna mais acessíveis aos usuários da linguagem Ruby. O Open Babel faz comunicação
+direta com as bases de reagentes disponíveis na aplicação efetuando as ações necessárias.
+
+Como não existe API direta entre a linguagem Ruby e o RDKit, foi necessário o uso
+de chamadas de sistema para comunicação entre o framework Ruby on Rails e uma aplicação
+que executa as operações necessárias utilizando o RDKit. Esta aplicação se chama
+ZINC Reactor e foi fornecida ao projeto pelo responsável pela aplicação do ZINC.
+O ZINC Reactor é a aplicação que faz a combinação entre as moléculas de cada uma
+das bases, passando para o RDKit executar a reação entre elas. Ao final, o resultado
+das reações é repassado à aplicação Rails para dar continuidade ao processo de exportação.
 
 \begin{figure}[!htb]
   \centering
@@ -288,6 +304,65 @@ pode ser visto na figura \ref{fig:arq}.
 \end{figure}
 
 \chapter{Resultados e discussão}
+
+Vamos apresentar abaixo um exemplo de utilização do fluxo completo criado na
+aplicação. Na figura \ref{fig:react1}, temos a tela inicial da aplicação. Podemos
+verificar a presença dos campos de filtragem para as duas bases de dados que iremos
+gerar em seguida.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[scale=0.5]{reaction1}
+  \caption{Tela inicial ao acessar o sistema.}
+  \label{fig:react1}
+\end{figure}
+
+Na figura \ref{fig:react2} temos um exemplo do preenchimento de uma das possíveis
+filtrages nas bases de dados. Para a Base 1 foi escolhido o grupo funcional Ácido
+Carboxílico e um número máximo de 10 átomos presentes nesta molécula. Já para a
+Base 2 os filtros foram preenchidos com o grupo funcional da Amina e foi feita uma
+filtragem aonde apenas moléculas com pelo menos 120 átomos estarão presentes em
+seus resultados.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[scale=0.5]{reaction2}
+  \caption{Exemplo de preenchimento dos filtros do sistema.}
+  \label{fig:react2}
+\end{figure}
+
+Após a filtragem das bases clicando no botão de busca, podemos ver na imagem \ref{fig:react3}
+um exemplo da exibição dos resultados encontrados de acordo com os filtros para
+cada uma das bases. Perceba, por exemplo, que todas as moléculas que aparecem no
+detalhe da imagem contém 10 ou menos átomos, o que corresponde à nossa filtragem
+na imagem \ref{fig:react2}.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[scale=0.5]{reaction3}
+  \caption{Exemplo de resultados da filtragem das bases do sistema.}
+  \label{fig:react3}
+\end{figure}
+
+Na imagem \ref{fig:react4} podemos ver a seleção da reação química que irá ser executada
+entre os reagentes filtrados nas duas bases.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[scale=0.5]{reaction4}
+  \caption{Seleção da reação química que irá reagir as duas bases filtradas.}
+  \label{fig:react4}
+\end{figure}
+
+Finalmente, no detalhe da figura \ref{fig:react5} podemos ver o resultado da exportação
+ocorrido ao final de todas as reações em um programa de planilha eletrônica.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[scale=0.4]{reaction5}
+  \caption{Planilha eletrônica com os resultados gerados pelas reações.}
+  \label{fig:react5}
+\end{figure}
 
 \chapter{Conclusão}
 
