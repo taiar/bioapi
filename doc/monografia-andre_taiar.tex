@@ -13,7 +13,7 @@
   numberstyle=\tiny,
   frame=tb,
   columns=fullflexible,
-  showstringspaces=false
+    showstringspaces=false
 }
 
 \graphicspath{{imagens/}}
@@ -85,7 +85,7 @@ busca de informações relativas a compostos químicos, representação de átom
 e reações químicas entre moléculas, bases e bibliotecas de compostos químicos e
 recuperação de informação nestas bases. A Quimioinformática é sistematicamente utilizada
 para análise \textit{in silico} (análises feitas através de simulação computacional) nas
-indústrias farmacêuticas, na Bioinformática e em qualquer laboratório de Química
+indústrias farmacêuticas, na bioinformática e em qualquer laboratório de Química
 atualmente.
 
 A Química Combinatória\cite{RBCF43904} é uma grande ferramenta para a descoberta e o desenvolvimento
@@ -120,13 +120,13 @@ empresa norte americana do ramo da química, biotecnologia e ciências da vida. 
 empresa é um conceituado fornecedor de compostos químicos para laboratórios de todo
 o mundo. Seu catálogo é fornecido em diversos formatos pelo ZINC\cite{ZINC} que é uma base de
 dados (não comerciais) de compostos químicos comercialmente disponíveis, além de
-uma infinidade de outras funcionalidades ligadas à Bioinformática e farmacêutica.
+uma infinidade de outras funcionalidades ligadas à bioinformática e farmacêutica.
 O ZINC é uma ferramenta gratuita desenvolvida e fornecida por laboratórios do Departamento
 de Química Farmacêutica da Universidade da Califórnia, em São Francisco (UCSF),
 EUA \cite{UCSFCHEM}.
 
 Foram utilizadas muitas ferramentas, todas disponíveis gratuitamente, na composição
-do sistema desenvolvido. Dentre as que compõem o back-end do projeto, a mais importante
+do sistema desenvolvido. Dentre as que compõem o \textit{back-end} do projeto, a mais importante
 é o Open Babel\cite{OPEN_BABEL}. Segundo palavras do próprio site o Open Babel é um conjunto de ferramentas
 projetado para lidar com as muitas linguagens dos dados químicos. No sistema ele
 é responsável por ler as bases de reagentes (disponibilizados em um formato bem
@@ -147,10 +147,10 @@ utilizamos uma outra ferramenta livre chamada RDKit\cite{RDKIT}.
 
 \chapter{Método do trabalho}
 
-Este trabalho foi definitivamente o meu primeiro contato com a Bioinformática durante
-toda a graduação e o primeiro passo necessário foi tentar entender bem o problema
-que a minha orientadora e idealizadora do projeto, Rafaela Ferreira, me passou em
-diversas reuniões que fizemos em seu início. Juntamente com a minha
+Este trabalho foi definitivamente o meu primeiro contato com a bioinformática e quimioinformática
+durante toda a graduação e o primeiro passo necessário foi tentar entender bem o
+problema que a minha orientadora e idealizadora do projeto, Rafaela Ferreira, me
+passou em diversas reuniões que fizemos em seu início. Juntamente com a minha
 outra orientadora, Raquel Minardi, aos poucos as funcionalidades necessárias foram
 ficando claras finalmente conseguimos definir um escopo.
 
@@ -169,17 +169,17 @@ era levado para ser pesquisado e analisado. Houve durante esta etapa do projeto
 um trabalho sobre análise de viabilidade, do que era possível ou não fazer dentro
 do que foi idealizado inicialmente para o projeto.
 
-Após definido o que seria possível fazer dentro dos requisitos do sistema, foram 
-definidas algumas funcionalidades prioritárias iniciais em forma de um backlog de 
-projeto e gradativamente este backlog foi sendo desenvolvido e agregado ao projeto 
-principal na forma de Sprints. As Sprints, na maioria das vezes, duraram 1 semana. 
-Sempre iniciavam com o planejamento das funcionalidades a serem implementadas para 
-a próxima iteração do projeto. Em seguida, haveria a fase de desenvolvimento do 
-projeto e, ao final do desenvolvimento, uma reunião de revisão da Sprint. Nesta 
-eram mostradas as funcionalidades que foram desenvolvidas ao decorrer da Sprint 
-para a professora Rafaela (que automaticamente tomou um papel de Product Owner). 
-Então o ciclo se repetia. Ainda sobraram no backlog do produto final entregue neste 
-trabalho, diversas funcionalidades que ainda são bastante interessantes e muito 
+Após definido o que seria possível fazer dentro dos requisitos do sistema, foram
+definidas algumas funcionalidades prioritárias iniciais em forma de um backlog de
+projeto e gradativamente este backlog foi sendo desenvolvido e agregado ao projeto
+principal na forma de Sprints. As Sprints, na maioria das vezes, duraram 1 semana.
+Sempre iniciavam com o planejamento das funcionalidades a serem implementadas para
+a próxima iteração do projeto. Em seguida, haveria a fase de desenvolvimento do
+projeto e, ao final do desenvolvimento, uma reunião de revisão da Sprint. Nesta
+eram mostradas as funcionalidades que foram desenvolvidas ao decorrer da Sprint
+para a professora Rafaela (que automaticamente tomou um papel de Product Owner).
+Então o ciclo se repetia. Ainda sobraram no backlog do produto final entregue neste
+trabalho, diversas funcionalidades que ainda são bastante interessantes e muito
 trabalho futuro ainda será possível a partir deste trabalho inicial, como descreverei
 melhor na conclusão do trabalho.
 
@@ -260,12 +260,12 @@ Com os requisitos da aplicação em mãos, precisamos buscar os componentes cert
 para compor o trabalho de forma a viabilizar que tudo funcione como planejado. O
 primeiro problema resolvido foi a forma de pesquisa na base de dados. O ZINC fornece
 as bases que iremos trabalhar em diversos formatos de dados. Os que nos interessam
-são os formatos MOL2 e PDB. Estes formatos contém diversas informações sobre as
+são os formatos MOL2 e PDB\cite{westbrook2003pdb}. Estes formatos contém diversas informações sobre as
 moléculas já pré-calculadas que serão úteis para a extração de outras informações
 necessárias no projeto. O Open Babel é a ferramenta que utilizamos para trabalhar
 com estas bases de dados. Por ser uma ferramenta especializada nesse tipo de operações
 (trabalhar com dados de bases de dados químicas, conversão dos formatos de arquivos,
-busca etc) acabou se tornando o principal componente do back-end em nossa aplicação.
+busca etc) acabou se tornando o principal componente do \textit{back-end} em nossa aplicação.
 
 O segundo problema a ser resolvido era a execução das reações. Existem atualmente
 boas ferramentas comerciais que realizam reações \textit{in silico} de moléculas mas são
@@ -281,13 +281,13 @@ ser executado como queríamos e partimos para a implementação da plataforma.
 
 \section{Definição da tecnologia}
 
-Foi escolhido para compor a aplicação a linguagem Ruby com o framework Ruby on Rails
+Foi escolhido para compor a aplicação a linguagem Ruby\cite{ruby} com o framework Ruby on Rails\cite{rails}
 por diversos motivos. Primeiramente, pela facilidade que este traz para escrever
 aplicações web de forma rápida e prática. Em segundo lugar, o Open Babel disponibiliza
 toda a sua API também para a linguagem Ruby, o que seria essencial para utilizá-lo
 como engine de busca e conversões de formatos dentro da aplicação. O RDKit infelizmente
 não oferece bindings para linguagem Ruby como o Open Babel, ele oferece suporte
-apenas à linguagem Python. Nesse caso, tivemos que trabalhar com chamadas de sistema
+apenas à linguagem Python\cite{python}. Nesse caso, tivemos que trabalhar com chamadas de sistema
 diretamente à aplicação que utiliza o RDKit.
 
 \section{Descrição da arquitetura do projeto}
@@ -296,10 +296,10 @@ Um diagrama da arquitetura do projeto com os principais componentes do sistema p
 ser visto na figura \ref{fig:arq}.
 
 O framework web Ruby on Rails é o componente do sistema responsável por distribuir
-as tarefas aos outros componentes do back-end baseado na interação do usuário. Ele
-recebe requisições da internet, as interpreta, aciona os componentes do back-end
+as tarefas aos outros componentes do \textit{back-end} baseado na interação do usuário. Ele
+recebe requisições da internet, as interpreta, aciona os componentes do \textit{back-end}
 e retorna uma resposta ao usuário. Existe uma camada entre o Rails e o Open Babel
-chamado Rubabel. Rubabel é uma biblioteca que abstrai alguns conceitos do Open Babel
+chamado Rubabel\cite{RUBABEL}. Rubabel é uma biblioteca que abstrai alguns conceitos do Open Babel
 e os torna mais acessíveis aos usuários da linguagem Ruby. O Open Babel faz comunicação
 direta com as bases de reagentes disponíveis na aplicação efetuando as ações necessárias.
 
